@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores'
-  import { fade } from 'svelte/transition'
   import ServerLogo from '$lib/ui/ServerLogo.svelte'
+  import { fade } from 'svelte/transition'
 
   export let form
 
@@ -151,7 +151,7 @@
       justify-content: center;
       align-items: center;
       padding: 0.65rem;
-      border: 1.5px solid #35d994;
+      border: 1.5px solid #7d10c7;
       border-radius: 0.25rem;
 
       &:disabled {
@@ -160,13 +160,13 @@
       }
 
       &:hover {
-        background-color: #35d994;
+        background-color: #7d10c7;
         transition: 0.2s;
         color: #121212;
       }
 
       &:focus {
-        background-color: #208259;
+        background-color: #500888;
       }
     }
   }

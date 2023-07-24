@@ -1,6 +1,6 @@
 <script>
-  import logo from '$lib/assets/server-logo.svg'
   import { browser } from '$app/environment'
+  import logo from '$lib/assets/server-logo.svg'
   import { supabase } from '$lib/supabase'
 
   let image_url = logo
@@ -22,7 +22,7 @@
 
 <div class="logo">
   <!-- svelte-ignore a11y-missing-attribute -->
-  <img src={image_url} />
+  <img src={image_url} height="40" />
 </div>
 
 <style>
@@ -30,6 +30,9 @@
     width: 100%;
   }
   img {
+    height: 40px;
     width: 100%;
+    object-fit: contain;
+    object-position: left;
   }
 </style>

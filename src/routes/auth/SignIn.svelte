@@ -1,6 +1,6 @@
 <script>
   import { enhance } from '$app/forms'
-  import { page, navigating } from '$app/stores'
+  import { navigating, page } from '$app/stores'
   import Icon from '@iconify/svelte'
 
   export let email
@@ -78,17 +78,17 @@
       justify-content: center;
       align-items: center;
       padding: 0.65rem;
-      border: 1.5px solid #35d994;
+      border: 1.5px solid #7d10c7;
       border-radius: 0.25rem;
 
       &:hover {
-        background-color: #35d994;
+        background-color: #7d10c7;
         transition: 0.2s;
         color: #121212;
       }
 
       &:focus {
-        background-color: #208259;
+        background-color: #500888;
       }
 
       .icon {

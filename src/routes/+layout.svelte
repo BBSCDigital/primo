@@ -1,13 +1,12 @@
 <script>
-  import { setContext } from 'svelte'
-  import '$lib/assets/reset.css'
   import { browser } from '$app/environment'
-  import { mouse_position } from '$lib/stores'
-  import { onMount } from 'svelte'
-  import { registerProcessors } from '@primocms/builder'
-  import { supabase as supabaseClient } from '$lib/supabase'
-  import Modal from '$lib/components/Modal.svelte'
   import { invalidate } from '$app/navigation'
+  import '$lib/assets/reset.css'
+  import Modal from '$lib/components/Modal.svelte'
+  import { mouse_position } from '$lib/stores'
+  import { supabase as supabaseClient } from '$lib/supabase'
+  import { registerProcessors } from '@primocms/builder'
+  import { onMount, setContext } from 'svelte'
 
   onMount(() => {
     const { data } = supabaseClient.auth.onAuthStateChange(() => {
@@ -47,8 +46,8 @@
     /* height: 100vh; */
     /* overflow: hidden; */
 
-    --primo-color-brand: #35d994;
-    --primo-color-brand-dark: #097548;
+    --primo-color-brand: #7d10c7;
+    --primo-color-brand-dark: #500888;
     --primo-color-white: white;
     --primo-color-codeblack: rgb(30, 30, 30);
     --primo-color-codeblack-opaque: rgba(30, 30, 30, 0.9);
