@@ -22,7 +22,7 @@
 
 <div class="logo">
   <!-- svelte-ignore a11y-missing-attribute -->
-  <img src={image_url} height="40" />
+  <img src={image_url} />
 </div>
 
 <style>
@@ -30,9 +30,6 @@
     width: 100%;
   }
   img {
-    height: 40px;
     width: 100%;
-    object-fit: contain;
-    object-position: left;
   }
 </style>
