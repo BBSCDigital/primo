@@ -1,9 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import ClassMangler from './class-mangler';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [
+  plugins: [
     sveltekit(),
     // ClassMangler({
     //   // dev: true
@@ -22,10 +21,10 @@ const config = {
       apply: 'build', // or 'serve'
     }
   ],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	},
-	server: {
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}']
+  },
+  server: {
     fs: {
       // throws an error without this when importing Fira font
       allow: ['..', 'node_modules/@fontsource/fira-code']
@@ -39,6 +38,11 @@ const config = {
   },
   define: {
     '__SERVER_VERSION__': JSON.stringify(process.env.npm_package_version),
+  },
+  build: {
+    rollupOptions: {
+      external: ['@primocms/builder']
+    }
   }
 };
 
