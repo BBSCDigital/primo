@@ -1,17 +1,15 @@
-import {clone as _cloneDeep} from 'lodash-es'
+import { locale, site } from '@bbscdigital/builder';
 import PromiseWorker from 'promise-worker';
-import {get} from 'svelte/store'
-import {site} from '@primocms/builder'
-import {locale} from '@primocms/builder'
-import svelteWorker from './workers/worker?worker'
-import postCSSWorker from './workers/postcss.worker?worker'
+import { get } from 'svelte/store';
+import postCSSWorker from './workers/postcss.worker?worker';
+import svelteWorker from './workers/worker?worker';
 
 const cssPromiseWorker = new PromiseWorker(new postCSSWorker());
 const htmlPromiseWorker = new PromiseWorker(new svelteWorker());
 
 const componentsMap = new Map();
 
-export async function html({ component, buildStatic = true, format = 'esm'}) {
+export async function html({ component, buildStatic = true, format = 'esm' }) {
 
   // return {
   //   error: 'none'
@@ -40,14 +38,14 @@ export async function html({ component, buildStatic = true, format = 'esm'}) {
       site: get(site),
       locale: get(locale)
     })
-  } catch(e) {
+  } catch (e) {
     console.log('error', e)
     res = {
       error: e.toString()
     }
   }
 
-  let final 
+  let final
 
   if (!res) {
     final = {
@@ -61,16 +59,16 @@ export async function html({ component, buildStatic = true, format = 'esm'}) {
     }
     function escapeHtml(unsafe) {
       return unsafe
-           .replace(/&/g, "&amp;")
-           .replace(/</g, "&lt;")
-           .replace(/>/g, "&gt;")
-           .replace(/"/g, "&quot;")
-           .replace(/'/g, "&#039;");
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
     }
-  } else if (buildStatic) {   
+  } else if (buildStatic) {
     const blob = new Blob([res.ssr], { type: 'text/javascript' });
     const url = URL.createObjectURL(blob);
-    const {default:App} = await import(url/* @vite-ignore */)
+    const { default: App } = await import(url/* @vite-ignore */)
     const rendered = App.render(component.data)
     final = {
       head: rendered.head,
@@ -82,7 +80,7 @@ export async function html({ component, buildStatic = true, format = 'esm'}) {
     final = {
       js: res.dom
     }
-  } 
+  }
 
   if (!buildStatic) {
     componentsMap.set(cacheKey, final)

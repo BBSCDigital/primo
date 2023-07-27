@@ -38,11 +38,6 @@ const config = {
   },
   define: {
     '__SERVER_VERSION__': JSON.stringify(process.env.npm_package_version),
-  },
-  build: {
-    rollupOptions: {
-      external: ['@primocms/builder']
-    }
   }
 };
 

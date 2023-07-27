@@ -1,7 +1,7 @@
 <script>
-	import { PrimoPage } from '@primocms/builder'
+  import { PrimoPage } from '@bbscdigital/builder'
 
-	export let data
+  export let data
 </script>
 
 <PrimoPage {data} />

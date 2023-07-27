@@ -1,13 +1,13 @@
 <script>
-  import {
-    PrimoPage,
-    realtime_subscribe,
-    locked_blocks,
-  } from '@primocms/builder'
-  import { supabase } from '$lib/supabase'
   import { browser } from '$app/environment'
   import { invalidate } from '$app/navigation'
+  import { supabase } from '$lib/supabase'
   import { createUniqueID } from '$lib/utils'
+  import {
+    PrimoPage,
+    locked_blocks,
+    realtime_subscribe,
+  } from '@bbscdigital/builder'
 
   export let data
 
