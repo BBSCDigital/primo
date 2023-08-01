@@ -1,5 +1,5 @@
 import '$lib/supabase';
-import { site as site_store } from '@primocms/builder';
+import { site as site_store } from '@bbscdigital/builder';
 import { get } from 'svelte/store';
 import supabaseAdmin from './supabase/admin';
 

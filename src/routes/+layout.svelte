@@ -5,7 +5,7 @@
   import Modal from '$lib/components/Modal.svelte'
   import { mouse_position } from '$lib/stores'
   import { supabase as supabaseClient } from '$lib/supabase'
-  import { registerProcessors } from '@primocms/builder'
+  import { registerProcessors } from '@bbscdigital/builder'
   import { onMount, setContext } from 'svelte'
 
   onMount(() => {

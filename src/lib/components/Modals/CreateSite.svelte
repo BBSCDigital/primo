@@ -4,11 +4,11 @@
   import Spinner from '$lib/ui/Spinner.svelte'
   import TextField from '$lib/ui/TextField.svelte'
   import { validate_url } from '$lib/utils'
-  import Icon from '@iconify/svelte'
   import {
     buildStaticPage,
     validate_site_structure_v2,
-  } from '@primocms/builder'
+  } from '@bbscdigital/builder'
+  import Icon from '@iconify/svelte'
   import Themes from '../Themes.svelte'
 
   export let onSuccess = (newSite, preview) => {}
