@@ -1,7 +1,7 @@
 <script>
   import ThemeThumbnail from '$lib/components/ThemeThumbnail.svelte'
-  import { validate_site_structure_v2 } from '@bbscdigital/builder'
   import Icon from '@iconify/svelte'
+  import { validate_site_structure_v2 } from '@primocms/builder'
   import axios from 'axios'
   import { createEventDispatcher } from 'svelte'
 

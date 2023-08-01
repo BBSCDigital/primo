@@ -1,6 +1,6 @@
 <script>
   import { supabase } from '$lib/supabase'
-  import Primo, { storage_subscribe, subscribe } from '@bbscdigital/builder'
+  import Primo, { storage_subscribe, subscribe } from '@primocms/builder'
 
   // NEXT: finish hooking this up
   subscribe(async ({ table, action, data, id, match, order }) => {

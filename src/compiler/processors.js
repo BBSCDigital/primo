@@ -1,4 +1,4 @@
-import { locale, site } from '@bbscdigital/builder';
+import { locale, site } from '@primocms/builder';
 import PromiseWorker from 'promise-worker';
 import { get } from 'svelte/store';
 import postCSSWorker from './workers/postcss.worker?worker';

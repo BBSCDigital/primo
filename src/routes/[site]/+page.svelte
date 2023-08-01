@@ -7,7 +7,7 @@
     PrimoPage,
     locked_blocks,
     realtime_subscribe,
-  } from '@bbscdigital/builder'
+  } from '@primocms/builder'
 
   export let data
 
