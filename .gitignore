@@ -14,5 +14,4 @@ scratchpad.md
 /test-results/
 /playwright-report/
 /playwright/.cache/
-
-build/
+pnpm-lock.yaml

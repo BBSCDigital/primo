@@ -28,6 +28,9 @@
         res = await supabase.from(table).select(data).match(match)
       }
     }
+    if (res.error) {
+      console.log('Error: ', { res })
+    }
     return res.data
   })
 
@@ -44,6 +47,13 @@
   export let data
 </script>
 
-<Primo {data}>
+<Primo
+  role={data.user.role}
+  data={{
+    site: data.site,
+    pages: data.pages,
+    symbols: data.symbols,
+  }}
+>
   <slot />
 </Primo>
